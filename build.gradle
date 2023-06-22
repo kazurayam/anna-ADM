@@ -1,0 +1,6 @@
+plugins {
+  id 'com.kazurayam.inspectus4katalon' version '0.4.5'
+}
+
+group = 'com.kazurayam'
+version = '0.1.0-SNAPSHOT'
