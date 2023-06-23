@@ -14,3 +14,7 @@ build
 .classpath
 
 .project
+.cache/
+
+store/
+store-backup/

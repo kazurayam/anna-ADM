@@ -33,7 +33,7 @@ import com.kms.katalon.core.configuration.RunConfiguration
 import com.kms.katalon.core.util.KeywordUtil
 
 /**
- * Test Cases/ADM/chronos_main
+ * Test Cases/ADM/mainChronos
  *
  */
 Path projectDir = Paths.get(RunConfiguration.getProjectDir())

@@ -28,7 +28,7 @@ void takeScreenshot(WebDriver driver, URL url, Map<String,String> attributes, We
 String profile = "CURA_DevelopmentEnv"
 ExecutionProfilesLoader profilesLoader = new ExecutionProfilesLoader()
 profilesLoader.loadProfile(profile)
-Objects.requireNonNull(GlobalVariable.URL)
+Objects.requireNonNull(GlobalVariable.topPageURL)
 Objects.requireNonNull(GlobalVariable.Username)
 Objects.requireNonNull(GlobalVariable.Password)
 Objects.requireNonNull(store)
@@ -38,7 +38,7 @@ Objects.requireNonNull(jobTimestamp)
 // -------- setup -----------------------------------------------------
 WebUI.openBrowser('')
 WebUI.setViewPortSize(1024, 800)
-WebUI.navigateToUrl(GlobalVariable.URL)
+WebUI.navigateToUrl(GlobalVariable.topPageURL)
 WebDriver driver = DriverFactory.getWebDriver()
 
 WebPageMaterializingFunctions pmf = new WebPageMaterializingFunctions(store, jobName, jobTimestamp)

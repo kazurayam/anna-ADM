@@ -1,19 +1,36 @@
-import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
-import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
-import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
-import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
-import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
-import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
-import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
-import com.kms.katalon.core.model.FailureHandling as FailureHandling
-import com.kms.katalon.core.testcase.TestCase as TestCase
-import com.kms.katalon.core.testdata.TestData as TestData
-import com.kms.katalon.core.testng.keyword.TestNGBuiltinKeywords as TestNGKW
-import com.kms.katalon.core.testobject.TestObject as TestObject
-import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
-import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
-import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
-import internal.GlobalVariable as GlobalVariable
-import org.openqa.selenium.Keys as Keys
 
+import java.nio.file.Path
+import java.nio.file.Paths
+
+import com.kazurayam.inspectus.core.Parameters
+import com.kazurayam.materialstore.core.JobName
+import com.kazurayam.materialstore.core.JobTimestamp
+import com.kazurayam.materialstore.core.SortKeys
+import com.kazurayam.materialstore.core.Store
+import com.kazurayam.materialstore.core.Stores
+import com.kms.katalon.core.configuration.RunConfiguration
+import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+
+
+/**
+ * Test Cases/ADM/run_materialize
+ *
+ */
+
+Path projectDir = Paths.get(RunConfiguration.getProjectDir())
+Store store = Stores.newInstance(projectDir.resolve("store"))
+JobName jobName = new JobName("ADM_run_materialize")
+JobTimestamp jobTimestamp = JobTimestamp.now()
+SortKeys sortKeys = new SortKeys("step", "URL.host", "URL.path")
+
+Map<String, Object> p = new LinkedHashMap<>()
+p.put(Parameters.KEY_store, store)
+p.put(Parameters.KEY_jobName, jobName)
+p.put(Parameters.KEY_jobTimestamp, jobTimestamp)
+p.put(Parameters.KEY_sortKeys, sortKeys)
+
+p.put(Parameters.KEY_environment, "ADM_ProductionEnv")
+
+// take screenshot PNG and save HTML source
+WebUI.callTestCase(findTestCase("Test Cases/ADM/materialize"), p);
