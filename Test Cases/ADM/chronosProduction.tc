@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>mainChronos</name>
+   <name>chronosProduction</name>
    <tag></tag>
    <comment></comment>
    <testCaseGuid>2aa829e8-ea45-4d7c-bb93-7645bfb1fe62</testCaseGuid>

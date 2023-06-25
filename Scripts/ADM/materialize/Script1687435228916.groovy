@@ -25,6 +25,8 @@ Objects.requireNonNull(environment)
 
 String executionProfile = environment.toString()
 
+println "executionProfile=${executionProfile}"
+
 List<Target> targetList = getTargetList(executionProfile)
 
 WebUI.comment("targetList.size()=" + targetList.size())
