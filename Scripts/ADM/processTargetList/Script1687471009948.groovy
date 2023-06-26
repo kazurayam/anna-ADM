@@ -13,8 +13,6 @@ Objects.requireNonNull(jobName)
 Objects.requireNonNull(jobTimestamp)
 Objects.requireNonNull(targetList)
 
-WebUI.openBrowser('')
-WebUI.setViewPortSize(1200, 1000)
 
 WebDriver driver = DriverFactory.getWebDriver()
 
@@ -40,4 +38,3 @@ targetList.eachWithIndex { target, index ->
 	//assert Files.exists(html.toPath())
 }
 
-WebUI.closeBrowser()
