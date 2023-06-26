@@ -1,2 +1,7 @@
 url,handle,description
 /,By.xpath: //div[contains(text(), 'Trend Setters'],the top page
+/en-us/insights-and-innovation/innovate-pet-nutrition/,By.xpath: //footer//img[@alt="ADM Logo Footer"],Innovate Pet Nutrition
+/en-us/insights-and-innovation/consumer-trends/,By.xpath: //footer//img[@alt="ADM Logo Footer"],Global Consumer Trends
+/en-us/sustainability/goals-and-programs/responsible-sourcing/,By.xpath: //footer//img[@alt="ADM Logo Footer"],Responsible Sourcing
+/en-us/news/news-releases/2023/2/adm-named-to-fortune-magazines-most-admired-company-list-for-15th-consecutive-year/,By.xpath: //footer//img[@alt="ADM Logo Footer"],FORTUNE Maganzine
+/en-us/sustainability/goals-and-programs/adm-cares/,By.xpath: //footer//img[@alt="ADM Logo Footer"],ADM Cares
