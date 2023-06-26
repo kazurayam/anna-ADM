@@ -28,7 +28,7 @@ void takeScreenshot(WebDriver driver, URL url, Map<String,String> attributes, We
 String profile = "CURA_DevelopmentEnv"
 ExecutionProfilesLoader profilesLoader = new ExecutionProfilesLoader()
 profilesLoader.loadProfile(profile)
-Objects.requireNonNull(GlobalVariable.topPageURL)
+Objects.requireNonNull(GlobalVariable.URL)
 Objects.requireNonNull(GlobalVariable.Username)
 Objects.requireNonNull(GlobalVariable.Password)
 Objects.requireNonNull(store)
@@ -38,10 +38,11 @@ Objects.requireNonNull(jobTimestamp)
 // -------- setup -----------------------------------------------------
 WebUI.openBrowser('')
 WebUI.setViewPortSize(1024, 800)
-WebUI.navigateToUrl(GlobalVariable.topPageURL)
+WebUI.navigateToUrl(GlobalVariable.URL)
 WebDriver driver = DriverFactory.getWebDriver()
 
 WebPageMaterializingFunctions pmf = new WebPageMaterializingFunctions(store, jobName, jobTimestamp)
+pmf.setScrollTimeout(1000)
 
 // -------- The top page is supposed to be open --------------------------------------
 WebUI.verifyElementPresent(findTestObject('CURA/Page_CURA Healthcare Service/top/a_Make Appointment'), 15)

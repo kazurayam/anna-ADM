@@ -23,6 +23,7 @@ targetList.eachWithIndex { target, index ->
 	
 	// take and store the entire screenshot using AShot
 	WebPageMaterializingFunctions pmf = new WebPageMaterializingFunctions(store, jobName, jobTimestamp)
+	pmf.setScrollTimeout(1000)
 	Map<String, String> attributes = ["step": String.format("%02d", index + 1)]
 	
 	// save as PNG

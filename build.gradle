@@ -1,5 +1,5 @@
 plugins {
-  id 'com.kazurayam.inspectus4katalon' version '0.4.5'
+  id 'com.kazurayam.inspectus4katalon' version '0.5.0'
 }
 
 group = 'com.kazurayam'
